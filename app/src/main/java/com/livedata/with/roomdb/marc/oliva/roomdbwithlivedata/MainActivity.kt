@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity(), ContactRecyclerAdapter.OnItemClickList
         viewModel = ViewModelProviders.of(this).get(ContactListViewModel::class.java)
 
         viewModel!!.getListContacts().observe(this, Observer { contacts ->
-            recyclerViewAdapter!!.addContacts(contacts!!)
+            recyclerViewAdapter!!.setListData(contacts!!)
         })
         fab.setOnClickListener {
             var intent = Intent(applicationContext, ContactDetailsActivity::class.java)

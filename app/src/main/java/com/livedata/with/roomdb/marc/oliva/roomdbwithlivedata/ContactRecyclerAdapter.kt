@@ -41,7 +41,7 @@ class ContactRecyclerAdapter(contacts: ArrayList<Contact>, listener: OnItemClick
 
     }
 
-    fun addContacts(listContacts: List<Contact>) {
+    fun setListData(listContacts: List<Contact>) {
         this.listContacts = listContacts
         notifyDataSetChanged()
     }

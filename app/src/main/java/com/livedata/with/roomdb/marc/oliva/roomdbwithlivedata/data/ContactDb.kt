@@ -12,7 +12,7 @@ import android.content.Context
 
 abstract class ContactDb : RoomDatabase() {
     companion object {
-        private var db: ContactDb? = null
+        var db: ContactDb? = null
         fun getDataBase(context: Context): ContactDb {
             if (db == null) {
                 db = Room.databaseBuilder(context.applicationContext, ContactDb::class.java, "contacts-db")
@@ -21,6 +21,5 @@ abstract class ContactDb : RoomDatabase() {
             return db as ContactDb
         }
     }
-
     abstract fun daoContact(): DaoContact
 }
